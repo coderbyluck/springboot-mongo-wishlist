@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by IntelliJ IDEA.
@@ -21,16 +22,24 @@ public class ProductDaoImpl implements ProductDao {
     public List<Product> getAllProducts() throws AppBaseException {
         List<Product> productList= new ArrayList<Product>();
 
-        Product product = new Product();
-        product.setId(9);
-        product.setName("Test Product");
-        product.setAverageRating(4.5d);
-        product.setDescription("Test Description");
-        product.setSeller("Amazon");
-        product.setLink("No Link");
+        Random randomNumber = new Random();
 
-        productList.add(product);
-        return productList;
+        if(randomNumber.ints(1).findFirst().getAsInt()%2==0){
+
+            Product product = new Product();
+            product.setId(9);
+            product.setName("Test Product");
+            product.setAverageRating(4.5d);
+            product.setDescription("Test Description");
+            product.setSeller("Amazon");
+            product.setLink("No Link");
+
+            productList.add(product);
+            return productList;
+        }else{
+            throw new AppBaseException("Random Exception thrown");
+        }
+
     }
 
     @Override

@@ -4,8 +4,6 @@ import com.coderbyluck.springboot.mongodb.domain.Product;
 import com.coderbyluck.springboot.mongodb.domain.ProductDetailsResponse;
 import com.coderbyluck.springboot.mongodb.exception.AppBaseException;
 
-import java.util.List;
-
 /**
  * Created by IntelliJ IDEA.
  * User: coderbyluck
@@ -16,6 +14,6 @@ import java.util.List;
 public interface WishListService {
 
     ProductDetailsResponse getAllProducts() throws AppBaseException;
-    ProductDetailsResponse getProductById(int id) throws AppBaseException;
+    Product getProductById(int id);
 
 }

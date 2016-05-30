@@ -1,6 +1,7 @@
 package com.coderbyluck.springboot.mongodb.domain;
 
 import java.math.BigInteger;
+import java.util.UUID;
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,16 +12,16 @@ import java.math.BigInteger;
  */
 public class Context {
 
-    private BigInteger id;
+    private UUID id;
     private String user;
     private String message;
     private boolean status;
 
-    public BigInteger getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(BigInteger id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
